@@ -8,5 +8,6 @@ return {
   },
   config = function()
     require('neo-tree').setup {}
+    vim.keymap.set('n', '<leader>t', '<CMD>Neotree<CR>', { desc = 'Open Neotree' })
   end,
 }
