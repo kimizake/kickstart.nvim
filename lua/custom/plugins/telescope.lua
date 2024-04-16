@@ -60,7 +60,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         buffers = {
           mappings = {
             i = {
-              ['<C-d>'] = actions.delete_buffer + actions.move_to_top,
+              ['<C-S-D>'] = actions.delete_buffer,
             },
           },
         },
