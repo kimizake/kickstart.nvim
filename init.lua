@@ -460,6 +460,15 @@ require('lazy').setup({
             },
           },
         },
+        eslint = {
+          settings = {
+            format = true,
+            codeActionOnSave = {
+              enable = true,
+              mode = 'all',
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -525,7 +534,7 @@ require('lazy').setup({
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        javascript = { { 'prettierd', 'prettier' } },
+        javascript = { 'prettierd' },
       },
     },
   },
