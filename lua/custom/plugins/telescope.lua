@@ -51,11 +51,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
+      defaults = {
+        mappings = {
+          i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        },
+        dynamic_preview_title = true,
+        path_display = { 'tail' },
+        layout_config = {
+          horizontal = {
+            preview_width = 0.5,
+          },
+        },
+      },
       pickers = {
         buffers = {
           mappings = {
@@ -66,6 +73,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
         colorscheme = {
           enable_preview = true,
+        },
+        find_files = {
+          hidden = true,
         },
       },
       extensions = {
@@ -97,7 +107,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
-        previewer = false,
+        previewer = true,
       })
     end, { desc = '[/] Fuzzily search in current buffer' })
 
