@@ -469,6 +469,12 @@ require('lazy').setup({
             },
           },
         },
+        tailwindcss = {
+          root_dir = function(fname)
+            local util = require 'lspconfig.util'
+            return util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts')(fname)
+          end,
+        },
       }
 
       -- Ensure the servers and tools above are installed
