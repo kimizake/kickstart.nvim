@@ -67,7 +67,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         buffers = {
           mappings = {
             i = {
-              ['<C-S-D>'] = actions.delete_buffer,
+              ['<C-k>'] = actions.delete_buffer,
             },
           },
         },
