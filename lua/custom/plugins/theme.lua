@@ -7,6 +7,6 @@ return { -- You can easily change to a different colorscheme.
     opts.style = 'night'
     opts.transparent = true
     require('tokyonight').setup(opts)
-    vim.cmd.colorscheme 'tokyonight-night'
+    vim.cmd.colorscheme 'tokyonight'
   end,
 }
