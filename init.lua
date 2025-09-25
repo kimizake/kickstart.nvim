@@ -60,7 +60,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Set file format to unix to ignore CR/CRLF tokens
-vim.opt.ff = 'unix'
+-- vim.opt.ff = 'unix'
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
