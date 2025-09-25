@@ -1,12 +1,14 @@
 -- Auto  formatter
 return {
   'stevearc/conform.nvim',
+  event = { 'BufWritePre' },
+  cmp = { 'ConformInfo' },
   lazy = false,
   keys = {
     {
       '<leader>f',
       function()
-        require('conform').format { async = true, lsp_fallback = true }
+        require('conform').format { async = true, lsp_fallback = 'fallback' }
       end,
       mode = '',
       desc = '[F]ormat buffer',
@@ -19,10 +21,14 @@ return {
       -- have a well standardized coding style. You can add additional
       -- languages here or re-enable it for the disabled ones.
       local disable_filetypes = { c = true, cpp = true }
-      return {
-        timeout_ms = 500,
-        lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-      }
+      if disable_filetypes[vim.bo[bufnr].filetype] then
+        return nil
+      else
+        return {
+          timeout_ms = 500,
+          lsp_fallback = 'fallback',
+        }
+      end
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
@@ -31,8 +37,8 @@ return {
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      javascript = { 'prettierd' },
-      typescript = { 'prettierd' },
+      javascript = { 'prettierd', 'eslintd' },
+      typescript = { 'prettierd', 'eslintd' },
       json = { 'prettierd' },
       jsonc = { 'prettierd' },
     },
