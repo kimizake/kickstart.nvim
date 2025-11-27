@@ -41,7 +41,13 @@ return {
       typescript = { 'prettierd', 'eslintd' },
       json = { 'prettierd' },
       jsonc = { 'prettierd' },
+      yaml = { 'prettierd' },
+      python = { 'black' },
     },
-    -- log_level = vim.log.levels.DEBUG,
+    formatters = {
+      black = {
+        prepend_args = { '--fast' },
+      },
+    },
   },
 }
