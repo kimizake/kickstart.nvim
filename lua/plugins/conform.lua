@@ -37,11 +37,13 @@ return {
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      javascript = { 'prettierd', 'eslintd' },
-      typescript = { 'prettierd', 'eslintd' },
-      json = { 'prettierd' },
-      jsonc = { 'prettierd' },
-      yaml = { 'prettierd' },
+      css = { 'prettier' },
+      scss = { 'prettier' },
+      javascript = { 'prettier' },
+      typescript = { 'prettier' },
+      json = { 'prettier' },
+      jsonc = { 'prettier' },
+      yaml = { 'prettier' },
       python = { 'black' },
     },
     formatters = {
