@@ -1,12 +1,11 @@
-return { -- You can easily change to a different colorscheme.
+---@module 'lazy'
+---@type LazySpec
+return {
   'folke/tokyonight.nvim',
   lazy = false,
-  priority = 1000, -- Make sure to load this before all the other start plugins.
-  config = function()
-    local opts = require('tokyonight.config').defaults
-    opts.style = 'night'
-    opts.transparent = true
-    require('tokyonight').setup(opts)
-    vim.cmd.colorscheme 'tokyonight'
-  end,
+  priority = 1000,
+  opts = {
+    style = 'night',
+    transparent = true,
+  },
 }

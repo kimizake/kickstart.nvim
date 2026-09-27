@@ -223,7 +223,7 @@ return {
       },
       eslint = {
         settings = {
-          format = true,
+          -- format = true,
           codeActionOnSave = {
             enable = true,
             mode = 'all',

@@ -48,3 +48,5 @@ require('lazy').setup {
     coloscheme = { 'tokyonight' },
   },
 }
+
+vim.cmd.colorscheme 'tokyonight'

@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
@@ -6,8 +8,12 @@ return {
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
   },
-  config = function()
-    require('neo-tree').setup {}
-    vim.keymap.set('n', '<leader>t', '<CMD>Neotree<CR>', { desc = 'Open Neotree' })
-  end,
+  keys = {
+    {
+      '<leader>t',
+      '<CMD>Neotree<CR>',
+      mode = 'n',
+      desc = 'Open Neotree',
+    },
+  },
 }
