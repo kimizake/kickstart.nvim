@@ -24,6 +24,7 @@ return { -- Highlight, edit, and navigate code
       'tsx',
       'toml',
       'html',
+      'yaml',
       'zsh',
     }
     local alreadyInstalled = require('nvim-treesitter.config').get_installed()
